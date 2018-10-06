@@ -12,14 +12,18 @@
 
 			  <script>
 			  	
-function search() {
+function search(a) {
 
-	fetch('https://api.foursquare.com/v2/venues/explore?client_id=GUVHV5JZT2UCRBCRQKWY10DUZKLRWIQTBGYNSS3MO03XMZYA&client_secret=HN3X2OY5JXL1ZC1PXAENUKNN1EZYGBBEQHAW0EDCSF2MJ23U&v=20180323&limit=1&ll=40.7243,-74.0018&query=coffee')
+	fetch('http://autocomplete.geocoder.api.here.com/6.2/suggest.json?app_id=FQILLWhL6qBAiQfjd8AV&app_code=tsb7kpss2ctn0m-0HRD91w&query='+a+'&beginHighlight=<b>&endHighlight=</b>')
     .then(function(response) {
-     return response.json();
+
+
+
+     return  response.json();
     })
   .then(function(myJson) {
-    $("#ss").html(JSON.stringify(myJson));
+    $("#ss").html(myJson.suggestions[0].label);
+    
     });
 }
 
@@ -27,8 +31,11 @@ function search() {
 			  </script>
 </head>
 <body>
-	<input type="text" name="" value="" placeholder="Find city...." onkeyup="search()">
-	<div id="ss"></div>
+	<input type="text" name="" value="" placeholder="Find city...." onkeyup="search(this.value)">
+	<a href="#"><div id="ss"></div></a><br>
+
 	
 </body>
 </html>
+
+ 
