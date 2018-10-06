@@ -4,7 +4,12 @@
     <meta charset="utf-8"/>
     <!-- Latest compiled and minified CSS -->
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -22,21 +27,56 @@
     <div class="container">
     
         <div class="header">
-       
-                <h1>iConnect</h1>
-            
+       <h1>iConnect</h1>
         </div>
     
         <div class="login">
         <img src="img/profile.jpg"><br>
-            <div class="login-form">
-            <input type=text><br>
-            <input type=text><br>
-            <button type=submit>Login</button>
+            <div class="login-form"><form action="main.php" method="post">
+            <input type=text name="email1"><br>
+            <input type=password name="password1"><br>
+                <button type=submit>Login</button></form><br><table><tr><td><button id=register class="btn">Not Registered</button></td>
+                <td><i class="fas fa-ellipsis-v"></i></td>
+                <td><button id=register class="btn">Forgot Password?</button></td>
+                
+                
+                
+                </tr></table>
                 </div>
         </div>
+        <div class="register">
+            <form action="register.php" method = "post"  enctype="multipart/form-data">
+            <div class="fname">Fname <input type="text" name="fname"></div>
+             <div class="lname">Lname<input type="text" name="lname"></div>
+             <div class="email">email<input type="text" name="email"></div>
+             <div class="password">Password<input type="password" name="password"></div>
+           <div class="image">Image:  <input type=file name=image></div>
+            
+                       <div class="submit"><button type="submit">REGISTER</button></div></form>
+            
+        </div>
     </div>
-   
+   <script>
+    
+$(document).ready(function(){
+      $("#register").on("click",function(){
+          
+          $(".login").css("left","100%");
+                   $(".register").css("left","30%");
+          
+               })
+     
+      })
+    
+    
+
+        
+      
+        
+        
+    
+
+    </script>
 </body>
 
 </html>
