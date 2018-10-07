@@ -84,3 +84,24 @@ function like(postid)
             
 
 }
+		  	
+function findplace(a) {
+	  $("#placelist").children('li').remove();
+
+	fetch('http://autocomplete.geocoder.api.here.com/6.2/suggest.json?app_id=FQILLWhL6qBAiQfjd8AV&app_code=tsb7kpss2ctn0m-0HRD91w&query='+a+'&beginHighlight=<b>&endHighlight=</b>')
+    .then(function(response) {
+
+
+
+     return  response.json();
+    })
+  .then(function(myJson) {
+
+
+  	for(i=0;i<=4;i++)
+  	{
+  $("#placelist").append("<li>"+myJson.suggestions[i].label+"</li>");
+    }
+    });
+}
+

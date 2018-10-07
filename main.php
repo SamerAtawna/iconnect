@@ -118,7 +118,27 @@ function is_rtl( $string ) {
                                 <div class="sec1">sec1</div>
                                     <div class="sec2">
                                         Whats going on?...<br><br>
-                                     <textarea id="post"></textarea><br><button value="" onclick="post()">post</button>
+                                     <div class="postcont">
+
+
+
+                                        <textarea id="post"></textarea><br>
+                                        <button value="" onclick="post()">post</button>
+                                              <button value="" onclick="post()">checkin</button>
+
+
+
+
+
+                                     </div>
+                                     <div class="checkin-modal">
+                                         
+                                         CHECKIN<hr><br>
+                                         <input type=text name=place pleaseholder="Enter City..." onkeyup="findplace(this.value)">
+                                         <ol id="placelist">
+                                               
+                                         </ol>
+                                     </div>
                            
                                      <br>
                                     <?php 
